@@ -1,1 +1,35 @@
-<p>header works!</p>
+<div class="navbar w-full flex items-center justify-between lg:px-[100px] p-2 py-5">
+    <div class="logo">
+        <h2 class="font-bold text-xl cursor-pointer mb-0">Soma</h2>
+    </div>
+    <div class="links">
+        <ul class="flex gap-4 text-[14px] md:text-[17px]">
+            <li><a>Home</a></li>
+            <li><a>Courses</a></li>
+            <li><a>Blog</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </div>
+    <div class="controlls">
+        <div class="hidden md:flex gap-5">
+            <div>
+                <li><a>Login</a></li>
+            </div>
+            |
+            <div>
+                <li><a>Register</a></li>
+            </div>
+        </div>
+        <div class="md:hidden">
+            @if (sideBarShowing) {
+                <span  (click)="toggleSidebar()" class="pi pi-times cursor-pointer"></span>
+            } @else {
+                <span (click)="toggleSidebar()" class="pi pi-bars cursor-pointer"></span>
+            }            
+        </div>
+    </div>      
+</div>
+
+<p-drawer [(visible)]="sideBarShowing" position="left" header="Soma">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga alias eligendi unde, maiores ipsum consequuntur, doloremque quas, voluptas autem explicabo qui saepe laborum.</p>
+</p-drawer>
