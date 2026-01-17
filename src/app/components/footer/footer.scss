@@ -4,10 +4,18 @@
     left: 0;
     right: 0;
     background-color: #F5E9D4;
+    color: #808080;
+    font-size: 14px;
 
-    p {
-        color: #808080;
-        font-size: 14px;
+    p {    
         margin: 1rem 0;
+    }
+
+    ul {
+        li {
+            list-style: none;
+            margin: 1rem 0;
+            cursor: pointer;
+        }
     }
 }
