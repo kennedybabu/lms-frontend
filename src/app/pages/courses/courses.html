@@ -15,11 +15,11 @@
 
         <div class="w-full flex-3">
             <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 md:px-[30px]">
-                <app-course-home-tile class="w-full "></app-course-home-tile>
-                <app-course-home-tile class="w-full "></app-course-home-tile>
-                <app-course-home-tile class="w-full "></app-course-home-tile>
-                <app-course-home-tile class="w-full "></app-course-home-tile>
-                <app-course-home-tile class="w-full "></app-course-home-tile>
+                @for (course of courses; track $index) {
+                    <app-course-home-tile *ngFor="let course of courses" [course]="course" (courseDeleted)="onCourseDelete($event)" class="w-full "></app-course-home-tile>
+                } @empty {
+                    <p>No Courses found!</p>
+                }
             </div>
         </div>
 

@@ -32,6 +32,17 @@
     </div>      
 </div>
 
-<p-drawer [(visible)]="sideBarShowing" position="left" header="Soma">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga alias eligendi unde, maiores ipsum consequuntur, doloremque quas, voluptas autem explicabo qui saepe laborum.</p>
+<p-drawer class="drawer" [(visible)]="sideBarShowing" position="left" header="Soma">
+   <div class="flex flex-col justify-between h-full">
+        <ul class="list-none">
+            <li>Home</li>
+            <li>Courses</li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+        <div class="flex text-[14px] justify-center gap-3 w-full items-center">
+            <button>Login</button> | 
+            <button>Register</button>
+        </div>
+   </div>
 </p-drawer>

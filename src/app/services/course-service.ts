@@ -17,6 +17,11 @@ export class CourseService {
       map(res => res.content)
     )
   }  
+
+  deleteCourse(id: string): Observable<Object> {
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+
+  }
   
 }
 

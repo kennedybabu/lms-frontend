@@ -1,14 +1,21 @@
 <div class="card cursor-pointer">
     <div class="w-full h-[255px] bg-red-400">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem totam magni quas.</p>
+        .
     </div>
     <div class="p-2 py-5">
         <small>Free</small>
-        <h2>React Js</h2>
-        <div class="w-full flex text-[#808080]">
-            <small>Frontend</small> 
-            |
-            <small>7 lessons</small>
+        <div>
+            <h2>{{  course().title }}</h2>
+            <div class="w-full">
+                <div class="w-full flex text-[#808080]">
+                    <small>{{ course().categoryTitle }}</small> 
+                    |
+                    <small>7 lessons</small>
+                </div>
+                <div>
+                    <i class="pi pi-ellipsis-v cursor-pointer" (click)="deleteCourse(course())"></i>
+                </div>
+            </div>
         </div>
         <hr class="font-bold my-3">
         <small class="text-[#808080] my-2">(<span class="font-bold">18</span>) votes, average: <span class="font-bold">3.94</span> out of 5</small>
