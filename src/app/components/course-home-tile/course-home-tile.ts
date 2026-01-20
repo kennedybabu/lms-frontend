@@ -18,6 +18,7 @@ export class CourseHomeTile {
 
   deleteCourse(course: Course) {
     this.courseDeleted.emit(course.id);
+    console.log('clicked')
   }
 
 }

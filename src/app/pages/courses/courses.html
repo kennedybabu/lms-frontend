@@ -1,27 +1,40 @@
 <div class="w-full min-h-screen">
-    <div class="w-full p-3 p-2 lg:px-[100px]">
-        <h2>Courses</h2>
-        <small>Home / Courses</small>
+    <div class="w-full p-3 p-2 lg:px-[100px] h-[100px] flex justify-center flex-col bg-[#F5E9D4]">
+        <h2 class="font-bold text-[20px]">Courses</h2>
+        <small class="text-[15px]">Home / Courses</small>
     </div>
     <div class="w-full gap-2 py-[50px] flex flex-col md:flex-row p-2 lg:px-[100px]">
         <div class="w-full flex-1">
-            <div class="w-full flex items-center h-[35px]">
-                <input type="text" class="h-full p-3" placeholder="Search course...">
-                <button class="p-3 flex items-center cursor-pointer justify-center">
+            <div class="w-full mb-3 flex items-center h-[50px]">
+                <input type="text" class="h-full p-3 border-t h-full border-l border-b w-full focus:outline-none" placeholder="Search course...">
+                <button class="p-3 flex h-full border-t border-r border-b items-center cursor-pointer justify-center">
                     <i class="pi pi-search h-full"></i>
                 </button>
+            </div>
+
+            <div class="w-full p-3 bg-[#F5E9D4]">
+                <h3>Course Categories</h3>
+                <hr>
+                <div>
+                    <div class="flex gap-2 my-2">
+                        <input class="cursor-pointer" type="checkbox" id="web-dev" >
+                        <label class="cursor-pointer" for="web-dev">Web Development</label>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="w-full flex-3">
             <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5 md:px-[30px]">
                 @for (course of courses; track $index) {
-                    <app-course-home-tile *ngFor="let course of courses" [course]="course" (courseDeleted)="onCourseDelete($event)" class="w-full "></app-course-home-tile>
+                    <app-course-home-tile [course]="course" (courseDeleted)="onCourseDelete($event)" class="w-full "></app-course-home-tile>
                 } @empty {
-                    <p>No Courses found!</p>
+                    <div class="flex items-center justify-center w-full">
+                        <i class="pi pi-exclamation-circle mr-2"></i>
+                        <p>Something went wrong! No Courses found!</p>
+                    </div>
                 }
             </div>
         </div>
-
     </div>
 </div>

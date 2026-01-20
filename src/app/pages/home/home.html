@@ -1,6 +1,6 @@
 <div class="w-full">
     <section class="hero w-full flex flex-col text-center gap-4 md:gap-2 items-center justify-center" style="height: calc(100vh - 68px);">
-        <h3 class="font-bold text-[19px]">We have the largest collection of local courses</h3>
+        <h3 class="font-bold text-[24px]">We have the largest collection of local courses</h3>
         <div class="flex cursor-pointer gap-2 my-3 items-center">
             <a routerLink="/courses">View All Courses</a>
             <i class="pi pi-angle-double-right mb-0"></i>
@@ -8,26 +8,30 @@
     </section>
 
     <div class="w-full p-5 lg:px-[100px]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, natus quasi voluptatibus ducimus corporis esse!
+
     </div>
 
     <section id="courses" class="w-full p-5 lg:px-[100px] text-center md:text-start">
         <div class="w-full flex gap-5 flex-col md:flex-row gap-2">
-            <div class="w-full lg:pr-3">
+            <div class="w-full flex-2 lg:pr-3">
                 <h1 class="uppercase my-3 font-bold">courses</h1>
                 <h3 class="my-2 text-[18px]">About Courses</h3>
                 <p>Student Registration and Administration Nemo enim ipsam voluptatem quia voluptas sit atur aut odit aut fugit, sed quia consequuntur magni res eos qui ratione voluptatem sequi nesciunt.</p>
                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised believable.</p>
-                <button class="uppercase cursor-pointer text-bold text-[14px] px-5 py-2 border-2 border-black">view all courses</button>
+                <button class="uppercase cursor-pointer text-bold text-[14px] text-[#838C48] px-5 py-2 border-2 border-[#838C48] hover:bg-[#838C48] transition hover:text-white hover:border-[#838C48]">view all courses</button>
             </div>
-
-            <div class="w-full">
-                <!-- <app-course-home-tile></app-course-home-tile> -->
-            </div>
-
-            <div class="w-full">
-                <!-- <app-course-home-tile></app-course-home-tile> -->
-            </div>
+           <div class="flex-4">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+                    @for (course of courses; track $index) {
+                        <app-course-home-tile [course]="course"></app-course-home-tile>
+                    } @empty {
+                        <div class="w-full text-center flex items-center justify-center">
+                            <i class="pi pi-exclamation-circle mb-0 mr-2"></i>
+                            <p>No courses found!</p>
+                        </div>
+                    }
+                </div>
+           </div>
         </div>
     </section>
 
@@ -36,7 +40,7 @@
             <h2 class="uppercase font-bold text-[18px]">Get in touch with us</h2>
             <p class="my-5 lg:max-w-[70%] text-[14px] text-[#808080]">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which Ipsum slightly believable</p>
 
-            <div class="flex h-[61px] my-5">
+            <div class="flex h-[51px] my-5">
                 <input class="h-full border px-3 py-1 focus:outline-none" type="text" name="email" id="email" placeholder="Your email address">
                 <button class="uppercase h-full px-3 bg-red-200 border-r border-t border-b cursor-pointer">subscribe</button>
             </div>
